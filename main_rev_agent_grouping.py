@@ -41,7 +41,7 @@ if sys.platform == "linux":
         return env(**kwargs)
     REGISTRY = {}
     REGISTRY["sc2"] = partial(env_fn, env=StarCraft2Env)
-    os.environ.setdefault("SC2PATH", os.path.join(os.getcwd(), "3rdparty", "StarCraftII"))
+    os.environ.setdefault("SC2PATH", "/root/second_eigen4/3rdparty/StarCraftII")
     env = REGISTRY["sc2"](map_name=cfg.map_name, seed=123, step_mul=8, replay_dir="Replays", )
 else:
     env = StarCraft2Env(map_name = cfg.map_name, seed=123, step_mul=8, )
